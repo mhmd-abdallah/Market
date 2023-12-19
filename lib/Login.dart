@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, prefer_const_constructors_in_immutables, prefer_const_constructors, must_be_immutable, unused_element, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_local_variable, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:market/SlideBar.dart';
 
 
 class Login extends StatelessWidget {
@@ -14,6 +15,7 @@ class Login extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+       drawer: SlideBar(),
       appBar: AppBar(),
       body: Column(
         children: [
