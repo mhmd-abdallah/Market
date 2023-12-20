@@ -1,4 +1,4 @@
-# Market
+# Supermarket
 
 A new Flutter project.
 
