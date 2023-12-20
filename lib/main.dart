@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:market/Login.dart';
+import 'package:market/LoginOrSignup.dart';
 import 'package:market/SlideBar.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:  Login(),
+      home:  LoginOrSignup(),
     );
   }
 }

@@ -9,63 +9,7 @@ class SlideBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /*
-          UserAccountsDrawerHeader(
-            accountName: Text('Karim',style: TextStyle(fontSize: 50),),
-            accountEmail: Text('example@gmail.com'),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/images/LOGO_Karim Supermarket.png',
-                  fit: BoxFit.contain,
-                  width: 150,
-                  height: 150,
-                ),
-              ),
-            ),
-            
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                 image: AssetImage('assets/images/bg.jpg')),
-                      
-                      ),
-            ),
-          */
-
-    /*
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.location_on),
-            title: Text('Address'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('My Shopping Lists'),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.description),
-            title: Text('Policies'),
-            onTap: () => null,
-          ),
-          */
+   
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
