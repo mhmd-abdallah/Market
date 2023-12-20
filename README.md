@@ -1,6 +1,6 @@
 # market
 
-A new Flutter project. a
+A new Flutter project.
 
 ## Getting Started
 
