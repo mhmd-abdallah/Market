@@ -15,7 +15,7 @@ class Login extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-       drawer: SlideBar(),
+      drawer: SlideBar(),
       appBar: AppBar(),
       body: Column(
         children: [
