@@ -28,7 +28,7 @@ class SlideBar extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fill,
-                 image: AssetImage('assets/images/bg.jpg')),
+                  image: AssetImage('assets/images/bg.jpg')),
                       
                       ),
             ),
@@ -72,7 +72,6 @@ class SlideBar extends StatelessWidget {
         children: [
           Container(
             height: 200,
-            
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
@@ -122,15 +121,12 @@ class SlideBar extends StatelessWidget {
                             fontSize: 25,
                             fontWeight: FontWeight.w400),
                       ),
-                       TextSpan(
+                      TextSpan(
                         text: '\nSaida - South Lebanon ',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w300
-                          
-                          
-                        ),
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300),
                       ),
                     ])),
                   ],
@@ -138,14 +134,20 @@ class SlideBar extends StatelessWidget {
               ],
             ),
           ),
-          _buildListTile(Icons.shopping_cart_checkout_rounded, 'Orders', () => null),
+          _buildListTile(
+              Icons.shopping_cart_checkout_rounded, 'Orders', () => null),
           _buildListTile(Icons.favorite, 'Favorites', () => null),
           _buildListTile(Icons.location_on, 'Address', () => null),
           _buildListTile(Icons.chat, 'My Shopping Lists', () {}),
           Divider(),
-          Text('     Other',style: TextStyle(color: Color(0xff2A4454),fontSize: 15,
-                          ),),
-         _buildListTile(Icons.settings, 'Settings', () => null),
+          Text(
+            '     Other',
+            style: TextStyle(
+              color: Color(0xff2A4454),
+              fontSize: 15,
+            ),
+          ),
+          _buildListTile(Icons.settings, 'Settings', () => null),
           _buildListTile(Icons.chat_bubble, 'Chat Support', () => null),
           _buildListTile(Icons.info, 'About', () => null),
           _buildListTile(Icons.login_outlined, 'Log out', () {}),
@@ -157,10 +159,18 @@ class SlideBar extends StatelessWidget {
 
 Widget _buildListTile(IconData iconData, String title, Function onTap) {
   return ListTile(
-    leading: Icon(iconData ,color: Color(0xff64846C),),
-    title: Text(title,style: TextStyle(color: Color(0xffF37C28),fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                           ),),
+    leading: Icon(
+      iconData,
+      color: Color(0xff64846C),
+    ),
+    title: Text(
+      title,
+      style: TextStyle(
+        color: Color(0xffF37C28),
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+      ),
+    ),
     onTap: () => onTap(),
   );
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'CustomWidget.dart';
 import 'SignupScreen.dart';
 import 'Login.dart';
-
+import 'buttons.dart';
 
 class LoginOrSignup extends StatelessWidget {
   const LoginOrSignup({super.key});
@@ -10,6 +10,7 @@ class LoginOrSignup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomWidget(
+      Drawer(),
       Container(
         child: Column(
           children: [
@@ -32,7 +33,7 @@ class LoginOrSignup extends StatelessWidget {
               ),
             ),
             Image.asset(
-              "assets/Untitled-2.png",
+              "assets/images/Untitled-2.png",
               width: 200,
               height: 200,
             ),
@@ -42,47 +43,27 @@ class LoginOrSignup extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
+                    button(
+                      "Sign up",
+                      () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context) => Signup()),
                         );
                       },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              Colors.green[900], // Background color
-                          foregroundColor: Colors.white, // Text color
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(20), // Border radius
-                          ),
-                          fixedSize: Size(100, 40)),
-                      child:
-                          const Text("Sign up", style: TextStyle(fontSize: 15)),
+                      Colors.green[900],
                     ),
                     const SizedBox(
                       width: 15,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
+                    button(
+                      "Log in",
+                      () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context) => Login()),
                         );
                       },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              Colors.orange[800], // Background color
-                          foregroundColor: Colors.white, // Text color
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(20), // Border radius
-                          ),
-                          fixedSize: Size(100, 40)),
-                      child: const Text(
-                        "Log in",
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ),
+                      Colors.orange[800],
+                    )
                   ],
                 ),
               ),

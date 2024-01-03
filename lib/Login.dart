@@ -2,6 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:market/SlideBar.dart';
 
+import 'CustomWidget.dart';
+import 'buttons.dart';
+import 'textField.dart';
+import 'viewingProducts.dart';
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);
@@ -14,27 +18,78 @@ class Login extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Scaffold(
+    return CustomWidget(
+        SlideBar(),
+        SizedBox(
+          width: 600,
+          height: 400,
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/Untitled-2.png"),
+                      fit: BoxFit.contain),
+                ),
+                child: Column(
+                  children: [
+                    Column(
+                      children: [
+                        TextFieldWidget(
+                            "Email",
+                            const Icon(
+                              Icons.email_outlined,
+                              color: Colors.grey,
+                            ),
+                            emailController),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFieldWidget(
+                            "Password",
+                            const Icon(
+                              Icons.lock_outlined,
+                              color: Colors.grey,
+                            ),
+                            passwordController),
+                        const SizedBox(
+                          height: 60,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              button("Log in", () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => cartPage()),
+                );
+              }, Colors.orange[800]),
+            ],
+          ),
+        ));
+  }
+
+  /*return Scaffold(
       drawer: SlideBar(),
       appBar: AppBar(),
       body: Column(
         children: [
           Container(
-            height: screenHeight * 0.2,
-            width: screenWidth * 0.4,
+            height: screenHeight * 0.3,
+            width: screenWidth * 0.5,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                   'assets/images/LOGO_Karim Supermarket.png',
                 ),
-                fit: BoxFit.cover,
               ),
             ),
           ),
-          
           Expanded(
             child: Container(
-            
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/Shopping_cart.png'),
@@ -46,11 +101,23 @@ class Login extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _inputField('Enter your email', emailController),
+                    TextFieldWidget(
+                        "Enter your email",
+                        const Icon(
+                          Icons.email_outlined,
+                          color: Colors.grey,
+                        ),
+                        emailController),
                     SizedBox(height: 10),
-                    _inputField('Enter your password', passwordController),
+                    TextFieldWidget(
+                        "Enter your password",
+                        const Icon(
+                          Icons.lock_outlined,
+                          color: Colors.grey,
+                        ),
+                        passwordController),
                     SizedBox(height: 10),
-                    _loginBtn(),
+                    button("Log in", () {}, Colors.orange[800])
                   ],
                 ),
               ),
@@ -72,9 +139,7 @@ class Login extends StatelessWidget {
         ],
       ),
     );
-  
-  
-  }
+  }*/
 
   Widget _inputField(String hintText, TextEditingController controller) {
     var border = OutlineInputBorder(

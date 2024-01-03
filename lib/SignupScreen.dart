@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:market/Login.dart';
+import 'package:market/buttons.dart';
+
 import 'CustomWidget.dart';
+import 'textField.dart';
+import 'viewingProducts.dart';
 
 class Signup extends StatefulWidget {
   Signup({super.key});
+
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   _SignupState createState() => _SignupState();
@@ -14,70 +24,77 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return CustomWidget(
+      Drawer(),
       SizedBox(
-        width: 300,
+        width: 600,
         child: Column(
           children: [
-            Stack(
+            Container(
               alignment: Alignment.center,
-              children: [
-                Image.asset("assets/Untitled-2.png", height: 200, width: 200),
-                Column(
-                  children: [
-                    TextFieldWidget(
-                        "Username",
-                        const Icon(
-                          Icons.person_outline,
-                          color: Colors.grey,
-                        )),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFieldWidget(
-                        "Email",
-                        const Icon(
-                          Icons.email_outlined,
-                          color: Colors.grey,
-                        )),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFieldWidget(
-                        "Password",
-                        const Icon(
-                          Icons.lock_outlined,
-                          color: Colors.grey,
-                        )),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFieldWidget(
-                      "Confirm Password",
-                      const Icon(
-                        Icons.lock_outlined,
-                        color: Colors.grey,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/Untitled-2.png"),
+                    fit: BoxFit.contain),
+              ),
+              child: Column(
+                children: [
+                  Column(
+                    children: [
+                      TextFieldWidget(
+                          "Username",
+                          const Icon(
+                            Icons.person_outline,
+                            color: Colors.grey,
+                          ),
+                          widget.usernameController),
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                )
-              ],
+                      TextFieldWidget(
+                          "Email",
+                          const Icon(
+                            Icons.email_outlined,
+                            color: Colors.grey,
+                          ),
+                          widget.emailController),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFieldWidget(
+                          "Password",
+                          const Icon(
+                            Icons.lock_outlined,
+                            color: Colors.grey,
+                          ),
+                          widget.passwordController),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFieldWidget(
+                          "Confirm Password",
+                          const Icon(
+                            Icons.lock_outlined,
+                            color: Colors.grey,
+                          ),
+                          widget.confirmPasswordController),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green[900], // Background color
-                  foregroundColor: Colors.white, // Text color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20), // Border radius
-                  ),
-                  fixedSize: const Size(100, 40)),
-              child: const Text("Sign up", style: TextStyle(fontSize: 15)),
-            ),
+            button("Sign up", () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => cartPage()),
+              );
+            }, Colors.green[900]),
             Row(
               children: [
+                const SizedBox(
+                  width: 80,
+                ),
                 Text(
                   "Already have an account?",
                   style: TextStyle(color: Colors.grey[600], fontSize: 12),
@@ -88,6 +105,9 @@ class _SignupState extends State<Signup> {
                     onPressed: () {
                       setState(() {
                         isClicked = !isClicked;
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
                       });
                     },
                     child: Text(
@@ -106,46 +126,6 @@ class _SignupState extends State<Signup> {
               ],
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class TextFieldWidget extends StatelessWidget {
-  TextFieldWidget(this.hintText, this.icon, {super.key});
-  final String hintText;
-  final TextEditingController controller = TextEditingController();
-  final FocusNode focusNode = FocusNode();
-  final Widget icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 45,
-      child: TextField(
-        controller: controller,
-        focusNode: focusNode,
-        style: const TextStyle(
-          fontSize: 16.0,
-          color: Colors.black,
-        ),
-        onTap: () {
-          if (!focusNode.hasFocus) {
-            focusNode.requestFocus();
-          }
-        },
-        decoration: InputDecoration(
-          prefixIcon: icon,
-          hintText:
-              focusNode.hasFocus || controller.text.isNotEmpty ? '' : hintText,
-          hintStyle: const TextStyle(
-            color: Colors.grey,
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.grey, width: 1.0),
-            borderRadius: BorderRadius.circular(20.0),
-          ),
         ),
       ),
     );
