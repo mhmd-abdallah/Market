@@ -1,5 +1,6 @@
-// ignore_for_file: file_names, prefer_const_constructors_in_immutables, prefer_const_constructors, must_be_immutable, unused_element, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_local_variable, sized_box_for_whitespace
+// ignore_for_file: file_names, prefer_const_constructors_in_immutables, prefer_const_constructors, must_be_immutable, unused_element, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_local_variable, sized_box_for_whitespace, unused_import
 import 'package:flutter/material.dart';
+import 'package:market/NavigationBar.dart';
 import 'package:market/SlideBar.dart';
 
 
@@ -20,14 +21,15 @@ class Login extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: screenHeight * 0.2,
+            height: screenHeight * 0.1,
             width: screenWidth * 0.4,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                   'assets/images/LOGO_Karim Supermarket.png',
                 ),
-                fit: BoxFit.cover,
+                scale: 8,
+             //   fit: BoxFit.cover,
               ),
             ),
           ),
@@ -47,30 +49,33 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     _inputField('Enter your email', emailController),
-                    SizedBox(height: 10),
+                   // SizedBox(height: 10),
                     _inputField('Enter your password', passwordController),
-                    SizedBox(height: 10),
-                    _loginBtn(),
+                   // SizedBox(height: 10),
+                   _loginBtn(),
                   ],
                 ),
               ),
             ),
           ),
-          Container(
-            height: screenHeight * 0.45,
-            width: screenWidth * 1.2,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/images/belowBg.png',
+          SafeArea(
+            child: Container(
+              height: screenHeight * 0.45,
+              width: screenWidth * 1.2,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/belowBg.png',
+                  ),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
                 ),
-                fit: BoxFit.cover,
-                alignment: Alignment.topCenter,
               ),
             ),
           ),
         ],
       ),
+       
     );
   
   
@@ -81,14 +86,19 @@ class Login extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         borderSide: const BorderSide(color: Color(0xFF6A8F6E)));
 
-    return TextField(
-      style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-      controller: controller,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-        enabledBorder: border,
-        focusedBorder: border,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Expanded(
+        child: TextField(
+          style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+          controller: controller,
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+            enabledBorder: border,
+            focusedBorder: border,
+          ),
+        ),
       ),
     );
   }

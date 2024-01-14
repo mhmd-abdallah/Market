@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, unused_import, prefer_const_constructors, avoid_returning_null_for_void, avoid_web_libraries_in_flutter, prefer_const_literals_to_create_immutables, unused_element, sort_child_properties_last
 
-//import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -28,19 +27,21 @@ class SlideBar extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                    child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/LOGO_Karim Supermarket.png',
-                        fit: BoxFit.contain,
-                        width: 90,
-                        height: 90,
+                  child: Expanded(
+                    child: Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                      ),
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/LOGO_Karim Supermarket.png',
+                          fit: BoxFit.contain,
+                          width: 90,
+                          height: 90,
+                        ),
                       ),
                     ),
                   ),
@@ -49,13 +50,13 @@ class SlideBar extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.location_on),
+                    
                     Text.rich(TextSpan(children: [
                       TextSpan(
                         text: 'KARIM ',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -63,14 +64,14 @@ class SlideBar extends StatelessWidget {
                         text: '\nSupermarket',
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 25,
+                            fontSize: 20,
                             fontWeight: FontWeight.w400),
                       ),
                        TextSpan(
                         text: '\nSaida - South Lebanon ',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 10,
                           fontWeight: FontWeight.w300
                           
                           
