@@ -43,11 +43,11 @@ class NavBar extends StatelessWidget {
         ),
         GestureDetector(
             onTap: () => {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AddToCart(),
-                      ))
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => AddToCart(products: [],),
+                  //     ))
                 },
             child: Image.asset(
               'assets/images/Asset 4@4x.png',

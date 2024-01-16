@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_import
+// ignore_for_file: prefer_const_constructors, unused_import, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:market/AddToCart.dart';
@@ -10,21 +10,38 @@ import 'package:market/LoginOrSignup.dart';
 import 'package:market/NavigationBar.dart';
 import 'package:market/Signup.dart';
 import 'package:market/SlideBar.dart';
+import 'package:market/product_model.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  //const MyApp({super.key});
+  final List<Product> products = [
+    Product(
+      name: 'Beverages',
+      image: 'assets/images/fishes.png',
+      price: 2.99,
+    ),
+    Product(
+      name: 'Snacks',
+      image: 'assets/images/fishes.png',
+      price: 1.99,
+    ),
+    // Add more products as needed
+  ];
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  AddToCart(),
+      home: AddToCart(
+        products: products,
+        initialQuantity: 1,
+      ),
     );
   }
 }
+
 
