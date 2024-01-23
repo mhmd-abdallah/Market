@@ -87,7 +87,7 @@ class _SignupState extends State<Signup> {
             ),
             button("Sign up", () {
               Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => cartPage()),
+                MaterialPageRoute(builder: (context) => viewingProducts()),
               );
             }, Colors.green[900]),
             Row(

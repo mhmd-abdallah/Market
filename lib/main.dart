@@ -3,7 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:market/Login.dart';
 import 'package:market/SlideBar.dart';
+
 import 'SplashScreen.dart';
+import 'cart-page.dart';
+import 'viewingProducts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:  LoginOrSignup(),
+      home: viewingProducts(),
     );
   }
 }
-

@@ -64,7 +64,7 @@ class Login extends StatelessWidget {
               const SizedBox(height: 10),
               button("Log in", () {
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => cartPage()),
+                  MaterialPageRoute(builder: (context) => viewingProducts()),
                 );
               }, Colors.orange[800]),
             ],
