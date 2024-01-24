@@ -1,11 +1,11 @@
 // ignore_for_file: file_names, prefer_const_constructors_in_immutables, prefer_const_constructors, must_be_immutable, unused_element, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_local_variable, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:market/HomeScreen.dart';
 import 'package:market/SlideBar.dart';
 
 import 'CustomWidget.dart';
 import 'buttons.dart';
 import 'textField.dart';
-import 'viewingProducts.dart';
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);
@@ -64,7 +64,7 @@ class Login extends StatelessWidget {
               const SizedBox(height: 10),
               button("Log in", () {
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => viewingProducts()),
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
               }, Colors.orange[800]),
             ],
